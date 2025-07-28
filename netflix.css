@@ -1,0 +1,622 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.hero {
+  background-image: url('./image/netflix.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  position: relative;
+  /* padding: 20px; */
+}
+
+.navbar {
+  padding: 10px 200px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.language{
+  padding: 6px 10px;
+  background: black;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 4px;
+}
+
+.sign-in {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  top: 30%;
+  transform: translateY(-30%);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.email-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.email-form input {
+  padding: 12px;
+  width: 300px;
+  border-radius: 2px;
+  font-size: 1rem;
+  
+}
+
+.email-form button {
+  padding: 12px 20px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.Movies{
+  font-size: 18px;
+  padding: 10px 12%;
+}
+
+.Movies h2 {
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.movie-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: scroll;
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: 10px;
+  margin: 10px auto;
+  color: #fff;
+}
+
+.movies {
+  min-width: 180px;
+  height: 260px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  
+}
+
+.movies img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movies:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(229,9,20,0.22);
+  cursor: pointer;
+}
+
+.index {
+  position: absolute;
+  top: 180px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+
+.More {
+  font-size: 18px;
+  padding: 10px 12%;
+}
+
+.More h2 {
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.feature-cards {
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card {
+  background: linear-gradient(135deg, #1c1c2d, #1a0b1e);
+  padding: 25px;
+  border-radius: 16px;
+  height: 250px;
+  width: 311px;
+  text-align: left;
+  position: relative;
+  color: #ffffffcc;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s;
+}
+
+.card h3{
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+
+}
+
+.card img {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.faq {
+  font-size: 18px;
+  padding: 10px 12%;
+}
+
+.faq h2 {
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.accordion {
+  margin: 10px auto;
+  width: 100%;
+}
+
+.accordion div {
+  list-style: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.accordion div label {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px;
+  font-size: 24px;
+  font-weight: 600;
+  background: #303030;
+  margin-bottom: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+label::after {
+  content: "+";
+  font-size: 50px;
+  position: absolute;
+  right: 30px;
+  top: 3px;
+  transition: transform 0.2s;
+}
+
+input {
+  display: none;
+}
+
+.accordion .content {
+  background: #303030;
+  text-align: left;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s, padding 0.3s;
+}
+
+.accordion input:checked + label + .content {
+  max-height: 600px;
+  padding: 30px 20px;
+}
+
+.accordion input:checked + label::after {
+  transform: rotate(45deg);
+}
+
+.faq small {
+  font-size: 20px;
+}
+
+.footer{
+  padding: 30px 20px;  
+}
+
+ .footer {
+  padding: 10px 12%;
+  color: #777;
+  }
+
+  .footer p {
+     margin-bottom: 30px;
+  }
+
+  .footer p a{
+      color: white;
+      font-weight: 300;
+  }
+
+  .footer .row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 10px 0;
+  }
+
+.footer .col {
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+  }
+
+  .footer .col a {
+    display: block;    
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .footer .col a:hover {
+    color: #fff;
+  }
+
+.footer .col h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 10px 20px;
+    }
+
+    .hero {
+      height: 70vh;
+    }
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero-content h2 {
+      font-size: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 0.8rem;
+    }
+
+    .email-form input {
+      width: 100%;
+    }
+
+    .email-form {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .email-form button {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .Movies {
+      padding: 10px 5%;
+    }
+
+    .Movies h2 {
+      font-size: 1rem;
+
+    }
+
+    .movie-row {
+      gap: 10px;
+    }
+
+    .movies{
+      min-width: 150px;
+      height: 220px;
+    }
+
+    .movies img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .movies .index{
+      font-size: 3rem;
+      top: 175px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+    }
+
+
+    .More{
+      padding: 10px 5%;
+    }
+
+    .More h2 {
+      font-size: 1rem;
+
+    }
+
+    .feature-cards{
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      height: auto;
+      padding: 10px 0;
+      gap: 10px 0px;
+    }
+
+    .feature-cards .card{
+      width: 90%;
+      height: 200px;
+      padding: 20px;
+    }
+
+    .feature-cards .card h3{
+      font-size: 1.2rem;
+    }
+
+    .feature-cards .card p{
+      font-size: 1rem;
+    }
+
+    .feature-cards .card img {
+      width: 80px;
+      height: 80px;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .faq{
+      padding :10px 5%;
+    }
+
+    .faq h2{
+      font-size: 1rem;      
+    }
+
+    .accordion div label{
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .accordion div .content p{
+      font-size: 0.8rem;   
+      padding: 10px;
+    }
+
+    .footer{
+      padding : 10px 5%;
+    }
+
+    .footer p{
+      font-size: 0.8rem;
+    }
+
+    .footer .row {
+      flex-direction: row;
+      align-items: flex-start;      
+    }
+
+    .footer .row .col{
+      flex-basis: 50%;
+      flex-grow: 1;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .footer .col a{
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+      color: #777;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 10px 50px;
+    }
+
+    .hero {
+      height: 80vh;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+      font-size: 1.2rem;
+    }
+
+    .hero-content p {
+      font-size: 1rem;
+    }
+
+    .email-form input {
+      width: 250px;
+    }
+
+    .email-form {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .email-form button {
+      width: 250px;
+      margin-top: 10px;
+    }
+
+    .Movies {
+      padding: 10px 10%;
+    }
+
+    .Movies h2 {
+      font-size: 1.2rem;
+    }
+
+    .movie-row {
+      gap: 15px;
+    }
+
+    .movies {
+      min-width: 160px;
+      height: 240px;
+    }
+
+    .movies .index {
+      font-size: 4rem;
+      top: 179px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+    }
+
+    .More {
+      padding: 10px 10%;
+    }
+
+    .More h2 {
+      font-size: 1.2rem;
+    }
+
+    .feature-cards {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      height: auto;
+      padding: 10px 0;
+      gap: 10px 0px;
+    }
+
+    .feature-cards .card {
+      width: 100%;
+      height: 220px;
+      padding: 20px;
+    }
+
+    .feature-cards .card h3 {
+      font-size: 1.3rem;
+    }
+    
+    .feature-cards .card p {
+      font-size: 1rem;
+    }
+
+    .feature-cards .card img {
+      width: 100px;
+      height: 100px;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .faq{
+      padding: 10px 10%;
+    }
+
+    .faq h2{
+      font-size: 1.2rem;
+    }
+    
+    .accordion div label{
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .accordion div .content p{
+      font-size: 1rem;
+      padding: 10px;
+    }
+
+    .footer{
+      padding: 10px 10%;
+    }
+
+    .footer p{
+      font-size: 1rem;
+    }
+
+    .footer div p{
+      font-size: 0.9rem;
+    }
+    
+    .footer div p a{
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .footer .row{
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    
+  }
+
+  
+
+  
+
