@@ -1,2 +1,2 @@
 # Netflix-
-I have created a responsive webpage using HTML,CSS.
+I have created a responsive webpage using HTML,CSS,JS.
