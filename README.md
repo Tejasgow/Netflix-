@@ -1,6 +1,6 @@
 # Netflix-
 
-I developed a responsive Netflix-themed webpage using HTML, CSS, and JavaScript.
+I developed a responsive Netflix-themed webpage using HTML and CSS.
 
 ## Features
 
