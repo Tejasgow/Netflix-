@@ -18,6 +18,7 @@ I developed a responsive Netflix-themed webpage using HTML,CSS and JS.
 
 - HTML5
 - CSS3
+- JS(ES6+)
 
 ## Credits
 
